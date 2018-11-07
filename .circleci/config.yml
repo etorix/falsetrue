@@ -8,10 +8,10 @@ jobs:
          name: this will run everything but fail
          shell: /bin/bash -o pipefail
          command: |
-                  set +e
+                  set -e
                   false
                   true
                   exit 0
       - run: 
          name: test2
-         command: echo "this will run despite a command in a previous run step failing -- with set -e, it wouldnt"
+         command: echo "this wont run at all"
