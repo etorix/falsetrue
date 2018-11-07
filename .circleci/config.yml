@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:latest
+    steps:
+      - run:
+         name: this will run everything but fail
+         shell: /bin/bash -o pipefail
+         command: |
+                  set +e
+                  false
+                  true
+                  exit 0
+      - run: 
+         name: test2
+         command: echo "this won't happen"
