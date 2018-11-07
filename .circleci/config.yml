@@ -14,4 +14,4 @@ jobs:
                   exit 0
       - run: 
          name: test2
-         command: echo "this won't happen"
+         command: echo "this will run despite a command in a previous run step failing -- with set -e, it wouldnt"
